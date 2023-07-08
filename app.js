@@ -42,7 +42,7 @@ app.get("/artist-search", async (request, response) => {
     console.log("The received data from the API: ", artistsSearch.body);
 
     response.render("artist-search-results", {
-      artists: artistsSearch.body.artists.items,
+      artistItems: artistsSearch.body.artists.items,
     });
   } catch (err) {
     console.log("The error while searching artists occurred: ", err);
@@ -51,11 +51,12 @@ app.get("/artist-search", async (request, response) => {
 
 app.get("/albums/:artistId", async (req, res, next) => {
   try {
+    // extracting the id from the url. Eg: http://localhost:3000/albums/0kgnPJElpccT4mc6IMZ653
     const myrequest = req.params;
-    console.log("my request: ", myrequest);
+    console.log("my request: ", myrequest); // my request:  { artistId: '0kgnPJElpccT4mc6IMZ653' }
     const albumsSearch = await spotifyApi.getArtistAlbums(myrequest.artistId);
     console.log("my artist album: ", albumsSearch);
-    res.render("albums", { albums: albumsSearch.body.items });
+    res.render("albums", { albumItems: albumsSearch.body.items });
     console.log("one album: ", albumsSearch.body.items[0]);
   } catch (err) {
     console.log("error while searching albums: ", err);
@@ -65,9 +66,15 @@ app.get("/albums/:artistId", async (req, res, next) => {
 
 app.get("/tracks/:albumId", async (req, res) => {
   try {
+    // extracting the id from the url. Eg: http://localhost:3000/tracks/4t1QFLS8YBdDo8GgHuVp3w
     const mytrackRequest = req.params;
-    console.log("this is my request: ", mytrackRequest);
+    console.log("this is my request: ", mytrackRequest); // this is my request:  { albumId: '4t1QFLS8YBdDo8GgHuVp3w' }
     const trackSearch = await spotifyApi.getAlbumTracks(mytrackRequest.albumId);
+    console.log("my tracks: ", trackSearch.body.items[0]);
+    // const trackItems2 = {
+    //   trackItems: trackSearch.body.items
+    // }
+    res.render("tracks", { trackItems: trackSearch.body.items });
   } catch (err) {
     console.log("something seems to be happening here: ", err);
   }
