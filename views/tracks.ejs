@@ -2,14 +2,18 @@
 <table class="styled-table">
   <thead>
     <tr>
+      <th>S/N</th>
       <th>Title</th>
       <th>Listen</th>
     </tr>
   </thead>
   <tbody>
 
-    <%  trackItems.forEach((track)=>{ %>
+    <%  trackItems.forEach((track, index)=>{ %>
     <tr>
+      <td>
+        <p><%- index %></p>
+      </td>
       <td>
         <p><%- track.name %></p>
       </td>
