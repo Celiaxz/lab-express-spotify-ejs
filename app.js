@@ -49,6 +49,19 @@ app.get("/artist-search", async (request, response) => {
   }
 });
 
+app.get("/albums/:artistId", async (req, res, next) => {
+  try {
+    const myrequest = req.params;
+    console.log("my request: ", myrequest);
+    const albumsSearch = await spotifyApi.getArtistAlbums(myrequest.artistId);
+    console.log("my artist album: ", albumsSearch);
+    res.render("albums", { albums: albumsSearch.body.items });
+  } catch (err) {
+    console.log("error while searching albums: ", err);
+  }
+  // .getArtistAlbums() code goes here
+});
+
 app.listen(3000, () =>
   console.log("My Spotify project running on port 3000 🎧 🥁 🎸 🔊")
 );
