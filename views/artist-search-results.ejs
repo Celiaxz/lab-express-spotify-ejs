@@ -1,18 +1,19 @@
  <h1>Artist Search result :</h1>
+ <div class="artist-search-result">
+   <ul>
+     <% artistItems.forEach(artist => { %>
+     <li>
+       <%- artist.name %> <% if (artist.images[0]?.url) { %>
+       <!-- <a href="/albums/<%- artist.id%>"> -->
+       <img src="<%- artist.images[1]?.url %>" alt="artist photo" class="spotifyImg" />
+       <!-- </a> -->
 
- <ul>
-   <% artistItems.forEach(artist => { %>
-   <li>
-     <%- artist.name %> <% if (artist.images[0]?.url) { %>
-     <!-- <a href="/albums/<%- artist.id%>"> -->
-     <img src="<%- artist.images[1]?.url %>" alt="artist photo" class="spotifyImg" />
-     <!-- </a> -->
+       <% }else{%>
+       <p>No photo available</p>
+       <%} %>
 
-     <% }else{%>
-     <p>No photo available</p>
-     <%} %>
-
-     <a href="/albums/<%- artist.id%>"><button>View Albums</button></a>
-   </li>
-   <% }) %>
- </ul>
+       <a href="/albums/<%- artist.id%>"><button>View Albums</button></a>
+     </li>
+     <% }) %>
+   </ul>
+ </div>
