@@ -1,0 +1,10 @@
+<ul>
+  <% albums.forEach(album => { %>
+  <li>
+    <%- album.name %>
+    <%- album.cover %>
+
+    <a href="/tracks/<%- album.tracks%>"><button>View Albums</button></a>
+  </li>
+  <% }) %>
+</ul>
