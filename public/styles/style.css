@@ -1,0 +1,25 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background-color: red;
+  background-image: url("/images/galaxy_background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 25%;
+}
+
+.home_form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  /* background-image: url(../Images/first-page-2.jpg); */
+  /* background-size: cover;
+  background-position: center; */
+
+  /* font-size: 1em; */
+  padding: 0px;
+  /* height: 100vh; */
+}
