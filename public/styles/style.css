@@ -78,3 +78,13 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
