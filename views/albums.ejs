@@ -2,9 +2,9 @@
   <% albums.forEach(album => { %>
   <li>
     <%- album.name %>
-    <%- album.cover %>
+    <img src="<%- album.images[1]?.url %>" alt="album photo" class="albumImg" />
 
-    <a href="/tracks/<%- album.tracks%>"><button>View Albums</button></a>
+    <a href="/tracks/<%- album.id%>"><button>View Tracks</button></a>
   </li>
   <% }) %>
 </ul>
