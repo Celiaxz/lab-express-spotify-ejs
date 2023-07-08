@@ -1,10 +1,10 @@
-<ul>
+<div class="album-search-result">
   <% albumItems.forEach(album => { %>
-  <li>
-    <%- album.name %>
+  <div class="album-item">
+    <p><%- album.name %></p>
     <img src="<%- album.images[1]?.url %>" alt="album photo" class="albumImg" />
 
-    <a href="/tracks/<%- album.id%>"><button>View Tracks</button></a>
-  </li>
+    <a href="/tracks/<%- album.id%>"><button class="button">View Tracks</button></a>
+  </div>
   <% }) %>
-</ul>
+</div>
