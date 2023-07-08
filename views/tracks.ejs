@@ -2,7 +2,7 @@
 <table class="styled-table">
   <thead>
     <tr>
-      <th>S/N</th>
+      <th>#</th>
       <th>Title</th>
       <th>Listen</th>
     </tr>
@@ -12,7 +12,7 @@
     <%  trackItems.forEach((track, index)=>{ %>
     <tr>
       <td>
-        <p><%- index %></p>
+        <p><%- index + 1 %></p>
       </td>
       <td>
         <p><%- track.name %></p>
