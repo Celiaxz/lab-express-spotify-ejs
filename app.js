@@ -63,6 +63,15 @@ app.get("/albums/:artistId", async (req, res, next) => {
   // .getArtistAlbums() code goes here
 });
 
+app.get("/tracks/:albumId", async (req, res) => {
+  try {
+    const mytrackRequest = req.params;
+    console.log("this is my request: ", mytrackRequest);
+    const trackSearch = await spotifyApi.getAlbumTracks(mytrackRequest.albumId);
+  } catch (err) {
+    console.log("something seems to be happening here: ", err);
+  }
+});
 app.listen(3000, () =>
   console.log("My Spotify project running on port 3000 🎧 🥁 🎸 🔊")
 );
