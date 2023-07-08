@@ -3,23 +3,36 @@ body {
   margin: 0px;
   font-family: "Poppins", sans-serif;
   height: 100vh;
-  background-color: red;
-  background-image: url("/images/galaxy_background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 25%;
 }
 
-.home_form {
+.homePage-form {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: space-between;
-  /* background-image: url(../Images/first-page-2.jpg); */
-  /* background-size: cover;
-  background-position: center; */
-
-  /* font-size: 1em; */
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: black;
+  background-position: center;
   padding: 0px;
-  /* height: 100vh; */
+  height: 100vh;
+  /* background-position: 50% 25%; */
+}
+.homePage-form h1 {
+  font-size: 4rem;
+  color: black;
+  text-transform: uppercase;
+}
+
+.form-class input[type="text"] {
+  width: 400px;
+  padding: 12px 20px;
+  margin: 8px 0;
+
+  border: none;
+  border-radius: 10px;
+}
+.form-class button {
 }
