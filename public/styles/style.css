@@ -88,6 +88,7 @@ body {
 .styled-table td {
   padding: 12px 15px;
 }
+
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
@@ -98,4 +99,9 @@ body {
 
 .styled-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr:hover {
+  font-weight: bold;
+  color: #009879;
 }
